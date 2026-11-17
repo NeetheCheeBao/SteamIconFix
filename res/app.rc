@@ -1,0 +1,28 @@
+#include <windows.h>
+#include "resource.h"
+
+IDR_MAINMENU MENU
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "刷新环境(&R)\tCtrl+R", IDM_REFRESH
+        MENUITEM "打开图标目录(&O)", IDM_OPEN_ICON_DIR
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)", IDM_EXIT
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "检查更新(&U)", IDM_CHECK_UPDATE
+        MENUITEM SEPARATOR
+        MENUITEM "关于 Steam Icon Fix(&A)", IDM_ABOUT
+    END
+END
+
+IDR_ACCEL ACCELERATORS
+BEGIN
+    "R", IDM_REFRESH, VIRTKEY, CONTROL
+END
+
+1 RT_MANIFEST "app.manifest"
+
+IDI_APPICON ICON "app.ico"
